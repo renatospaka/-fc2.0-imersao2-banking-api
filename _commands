@@ -1,0 +1,12 @@
+## contêineres
+docker-compose up -d 
+docker-compose down
+docker-compose ps
+docker-compose start
+docker-compose stop
+
+## abre o bash do app dentro do contêiner
+docker-compose exec app bash
+
+## create migrations with typeorm
+npm run typeorm migration:create -- -n CreateBankAccountsTable
