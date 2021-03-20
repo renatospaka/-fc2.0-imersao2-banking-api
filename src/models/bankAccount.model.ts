@@ -2,7 +2,7 @@ import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn 
 import { V4 as uuidv4 } from 'uuid';
 
 @Entity({
-  name: 'bank-accounts',
+  name: 'bank_accounts',
 })
 export class BankAccount {
   @PrimaryGeneratedColumn('uuid')

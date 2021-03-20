@@ -1,3 +1,6 @@
+## acessos de execução
+chmod +x .docker/entrypoint.sh
+
 ## contêineres
 docker-compose up -d 
 docker-compose down
@@ -8,5 +11,16 @@ docker-compose stop
 ## abre o bash do app dentro do contêiner
 docker-compose exec app bash
 
-## create migrations with typeorm
-npm run typeorm migration:create -- -n CreateBankAccountsTable
+## create migration with typeorm
+migration:create -- -n CreateBankAccountsTable
+
+## execute all new migrations
+npm run typeorm migration:run
+
+## create entity with typeorm
+npm run typeorm entity:create -- -n bankAccount
+
+## create controller via nest
+nest g co controllers/bankAccount 
+
+-> vídeo 48.58

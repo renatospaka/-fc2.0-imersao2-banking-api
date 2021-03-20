@@ -9,31 +9,31 @@ export class CreateBankAccountsTable1612826477307 implements MigrationInterface 
           {
             name: 'id',
             type: 'uuid',
-            isPrimary: true
+            isPrimary: true,
           },
           {
             name: 'account_number',
-            type: 'varchar'
+            type: 'varchar',
           },
           {
             name: 'owner_name',
-            type: 'varchar'
+            type: 'varchar',
           },
           {
             name: 'balance',
-            type: 'double precision'
+            type: 'double precision',
           },
           {
             name: 'created_at',
             type: 'timestamp',
-            default: 'CURRENT_TIMESTAMP'
-          }
-        ]
-      })
-    )
+            default: 'CURRENT_TIMESTAMP',
+          },
+        ],
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('bank_accounts')
+    await queryRunner.dropTable('bank_accounts');
   }
 }

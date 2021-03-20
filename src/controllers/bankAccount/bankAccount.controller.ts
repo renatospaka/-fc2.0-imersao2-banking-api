@@ -7,7 +7,7 @@ import { Repository } from 'typeorm';
 export class BankAccountController {
   constructor(
     @InjectRepository(BankAccount)
-    private bankAccountRepo: Repository<BankAccount>
+    private bankAccountRepo: Repository<BankAccount>,
   ) {}
 
   @Get()
@@ -16,5 +16,5 @@ export class BankAccountController {
   }
 
   @Get()
-  show() {}
+  show() { }
 }

@@ -10,13 +10,15 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+    depends_on:
+      - db
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
   db:
     build: .docker/postgres
     container_name: pix_banking_db
-    restart: always
+    #restart: always
     tty: true
     volumes:
       - .docker/dbdata:/var/lib/postgresql/data
