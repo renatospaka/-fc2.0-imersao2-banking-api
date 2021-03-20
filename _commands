@@ -23,4 +23,5 @@ npm run typeorm entity:create -- -n bankAccount
 ## create controller via nest
 nest g co controllers/bankAccount 
 
--> vídeo 48.58
+## execute command line
+npm run console fixtures
