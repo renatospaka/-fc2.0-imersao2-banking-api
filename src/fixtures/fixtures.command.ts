@@ -31,7 +31,7 @@ export class FixturesCommand {
     await repository.save(obj);
   }
 
-  async getRepository(model: any) {
+  getRepository(model: any) {
     const conn = getConnection('default');
     return conn.getRepository(model);
   }
