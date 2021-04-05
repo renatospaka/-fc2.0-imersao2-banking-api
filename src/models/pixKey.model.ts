@@ -3,20 +3,20 @@ import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn 
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity({
-  name: 'bank_accounts',
+  name: 'pix_keys',
 })
-export class BankAccount {
+export class PixKey {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
-  account_number: string;
+  kind: string;
 
   @Column()
-  owner_name: string;
+  key: string;
 
   @Column()
-  balance: number;
+  bank_account_id: string;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
@@ -25,11 +25,5 @@ export class BankAccount {
   generateId() {
     if (this.id) return;
     this.id = uuidv4();
-  }
-
-  @BeforeInsert()
-  initBalance() {
-    if (this.balance) return;
-    this.balance = 0;
   }
 }

@@ -12,16 +12,21 @@ docker-compose stop
 docker-compose exec app bash
 
 ## create migration with typeorm
-migration:create -- -n CreateBankAccountsTable
+npm run typeorm migration:create -- -n CreateBankAccountsTable
+npm run typeorm migration:create -- -n CreatePixKeysTable
 
-## execute all new migrations
+## execute all new migrations and create tables
 npm run typeorm migration:run
 
 ## create entity with typeorm
 npm run typeorm entity:create -- -n bankAccount
+npm run typeorm entity:create -- -n pixKey
 
 ## create controller via nest
 nest g co controllers/bankAccount 
+nest g co controllers/pixKey 
 
 ## execute command line
 npm run console fixtures
+
+1:00:46
